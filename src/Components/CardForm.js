@@ -2,36 +2,38 @@ import React, { useState } from 'react'
 // import Nametag from './Nametag'
 
 
-function CardForm () {
+function CardForm ({onAddPerson}) {
+    
     const [formData, setFormData] = useState({
         name: "",
         status: "All",
     });
-console.log(formData);
 
-function handleChange(e){
-    setFormData({
-        ...formData,
-        [e.target.name]: e.target.value,
-    });
-}
+    function handleChange(e){
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    }
 
-function handleSubmit(e){
-    e.preventDefault();
-    fetch("http://localhost:4001/person", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-  },
-    body: JSON.stringify({
-      name: formData.name,
-      status: formData.status,
-    }),
+    function handleSubmit(e){
+        e.preventDefault();
+        
+        fetch("http://localhost:4000/person", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+    },
+        body: JSON.stringify({
+        name: formData.name,
+        status: formData.status,
+            }),
+        })
+        .then((r) => r.json())
+        .then(onAddPerson);
+    }
 
-    });
-}
-
-    return (
+return (
         <section id="card">
             <h3>Your Info</h3>
                 <form onSubmit={handleSubmit}>
