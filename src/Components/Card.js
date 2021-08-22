@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import Nametag from './Nametag'
 
 
-function Card () {
+function CardForm () {
     const [formData, setFormData] = useState({
         name: "",
         status: "All",
@@ -58,4 +58,4 @@ function handleSubmit(e){
     )
 }
 
-export default Card
+export default CardForm
