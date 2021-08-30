@@ -2,59 +2,58 @@ import React, {useState, useEffect} from 'react';
 import { Route, Switch } from "react-router-dom";
 import NavBar from './Components/NavBar';
 import Backdoor from './Components/Backdoor';
-import PageContainer from './Components/PageContainer';
 import Home from "./Components/Home";
 import Room from "./Components/Room";
 
 
 function App() {
-  const [page, setPage] = useState("Home")
-  const [personList, setPersonList] = useState([])
+  const [patients, setPatients] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/person")
+    fetch("http://localhost:4000/patients")
     .then((r) => r.json())
-    .then(setPersonList)
+    .then(setPatients)
   }, []);
 
-  function handleAddPerson(newPerson){
-    setPersonList([...personList, newPerson]);
+  function handleAddPatient(newPatient){
+    setPatients([...patients, newPatient]);
   }
 
-  function handleRemovePerson(removePerson){
-    const updatedPersonList = personList.filter(
-      (person) => person.id !== removePerson.id);
-      setPersonList(updatedPersonList);
+  function handleRemovePatient(removePatient){
+    const updatedPatients = patients.filter(
+      (patient) => patient.id !== removePatient.id);
+      setPatients(updatedPatients);
   }
-  function handleUpdatedPerson(updatedPerson){
-    const updatedPersonList = personList.map((person) => 
-    person.id === updatedPerson.id ? updatedPerson : personList
-    );
-    setPersonList(updatedPersonList);
-  }
-
   
+  function handleUpdatedPatient(updatedPatient){
+    const updatedPatients = patients.map((patient) => 
+    patient.id === updatedPatient.id ? updatedPatient : patients
+    );
+    setPatients(updatedPatients);
+  }
+
+
 
   return (
-    <main id="home">
-      <NavBar onChangePage={setPage}/>
-      <Switch>
-        <Route exact path="/home">
-          <Home onAddPerson={handleAddPerson}/>  
-        </Route>
-        <Route exact path="/room">
-          <Room />  
-        </Route>
-        <Route exact path="/backdoor">
-            <Backdoor />
-        </Route>
-      </Switch>
-      <PageContainer
-        personList={personList}
-        onDeletePerson={handleRemovePerson}
-        onUpdatePerson={handleUpdatedPerson}
-      />
-    </main>
+    <div>
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <Home onAddPatient={handleAddPatient}/>  
+          </Route>
+          <Route exact path="/room">
+            <Room 
+                  patients={patients}
+                  onDeletePatient={handleRemovePatient}
+                  onUpdatePatient={handleUpdatedPatient}
+            />  
+          </Route>
+          <Route exact path="/backdoor">
+              <Backdoor />
+          </Route>
+        </Switch>
+    
+    </div>
 
   );
 }

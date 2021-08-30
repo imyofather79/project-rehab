@@ -1,14 +1,14 @@
 import React from 'react'
 import CardForm from './CardForm';
 
- function Home({onAddPerson}) {
+ function Home({onAddPatient}) {
   
     return (
         <div id="home">
             <h1>Welcome to the Rehab Center</h1>
             <br/>
-            <span>Please input your information in the space below:</span>
-            <CardForm onAddPerson={onAddPerson} />
+            <span>Please check in below:</span>
+            <CardForm onAddPatient={onAddPatient} />
         </div>
     )
 }

@@ -12,5 +12,4 @@ Rehab center and treatment programs.
 8. reset button => refresh data
 
 API:
-https://kanye.rest/
 https://placebear.com/
