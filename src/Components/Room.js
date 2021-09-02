@@ -1,13 +1,13 @@
 import React from 'react'
 import PatientCard from './PatientCard';
 
- function Room({patients, onDeletePatient, onUpdatePatient}) {
+ function Room({patients, onUpdatePatient}) {
      
-    const patientCards = patients.map((patient) => (
+    const patientCards = patients.filter((patient) => !patient.isHidden)
+        .map((patient) => (
         <PatientCard 
             key={patient.id}
             patients={patient}
-            onDeletePatient={onDeletePatient}
             onUpdatePatient={onUpdatePatient}
         />
     ));

@@ -1,11 +1,21 @@
 import React from 'react'
+import Dealer from './Dealer';
 
-
- function Backdoor() {
+ function Backdoor({patients, onDeletePatient, onUpdatePatient}) {
+     
+    const backdoorDealer = patients.filter((patient) => patient.isHidden)
+    .map((patient) => (
+        <Dealer 
+            key={patient.id}
+            patients={patient}
+            onDeletePatient={onDeletePatient}
+            onUpdatePatient={onUpdatePatient}
+        />
+    ));
 
     return (
-        <div id="backdoor">
-            
+        <div className="backdoor">
+            {backdoorDealer}
         </div>
     )
 }

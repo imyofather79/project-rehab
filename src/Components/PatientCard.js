@@ -1,16 +1,21 @@
-import React from 'react'
+import React from 'react';
+import ReactTooltip from 'react-tooltip';
 
- function PatientCard({patients, onDeletePatient, onUpdatePatient}) {
+ function PatientCard({patients, onUpdatePatient}) {
     const {id, name, status, image } = patients;
     
-    function handleDeleteClick(){
+    function handleUpdateClick(){
         fetch(`http://localhost:4000/patients/${id}`, {
-            method: "DELETE",
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({isHidden: !patients.isHidden})
         })
-            .then((r) => r.json())
-            .then(() =>{ 
-                onDeletePatient(patients);
-            });
+        .then((r) => r.json())
+        .then((submit) =>{ 
+            onUpdatePatient(submit)  ;
+            })
     }
 
     let userStatus;
@@ -28,20 +33,20 @@ import React from 'react'
             default:
                 userStatus = '🍻&💉&🐾'
         }
-
     
     return (
         <div className="page-container">
-            <h2>Name: {name}</h2>
+            <ReactTooltip />
+                <h2>Name: {name}</h2>
             <img
                 src={image}
                 alt={name}
             />
             <br />
-            <span>Addiction: {userStatus} </span>
+                <span data-tip={status}>Addiction: {userStatus} </span>
             <br />
-            <button onClick={handleDeleteClick}>
-                Detox
+            <button onClick={handleUpdateClick}>
+                Detox?
             </button>
             
         </div>

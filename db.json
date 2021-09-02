@@ -1,28 +1,46 @@
 {
   "patients": [
     {
-      "name": "Steve",
-      "status": "All",
-      "image": "https://placebear.com/401/401",
-      "id": 1
-    },
-    {
       "name": "Sam",
       "status": "Alcohol",
       "image": "https://placebear.com/406/407",
-      "id": 2
+      "id": 1,
+      "isHidden": false
     },
     {
       "name": "Harry",
       "status": "Drug",
       "image": "https://placebear.com/476/450",
+      "id": 2,
+      "isHidden": false
+    },
+    {
+      "name": "George",
+      "status": "Alcohol",
+      "image": "https://placebear.com/460/413",
+      "id": 3,
+      "isHidden": false
+    },
+    {
+      "name": "Paula",
+      "status": "Drug",
+      "isHidden": false,
+      "image": "https://placebear.com/439/492",
       "id": 4
     },
     {
-      "name": "Nate",
-      "status": "Behavioral",
-      "image": "https://placebear.com/498/422",
+      "name": "Bad Bear",
+      "status": "All",
+      "isHidden": false,
+      "image": "https://placebear.com/496/461",
       "id": 5
+    },
+    {
+      "name": "Father Bear",
+      "status": "All",
+      "isHidden": false,
+      "image": "https://placebear.com/436/492",
+      "id": 6
     }
   ]
 }

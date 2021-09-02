@@ -24,10 +24,11 @@ function App() {
       (patient) => patient.id !== removePatient.id);
       setPatients(updatedPatients);
   }
-  
+
+
   function handleUpdatedPatient(updatedPatient){
     const updatedPatients = patients.map((patient) => 
-    patient.id === updatedPatient.id ? updatedPatient : patients
+    patient.id === updatedPatient.id ? updatedPatient : patient
     );
     setPatients(updatedPatients);
   }
@@ -45,11 +46,15 @@ function App() {
             <Room 
                   patients={patients}
                   onDeletePatient={handleRemovePatient}
-                  onUpdatePatient={handleUpdatedPatient}
+                  onUpdatePatient={handleUpdatedPatient}     
             />  
           </Route>
           <Route exact path="/backdoor">
-              <Backdoor />
+              <Backdoor 
+                patients={patients}
+                onDeletePatient={handleRemovePatient}
+                onUpdatePatient={handleUpdatedPatient}
+              />
           </Route>
         </Switch>
     

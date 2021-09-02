@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import {useHistory} from "react-router-dom";
-// import Nametag from './Nametag'
 
 
 function CardForm ({onAddPatient}) {
@@ -10,6 +9,7 @@ function CardForm ({onAddPatient}) {
         name: "",
         status: "All",
         image: "",
+        isHidden: false,
     });
 
     function handleChange(e){
@@ -18,10 +18,6 @@ function CardForm ({onAddPatient}) {
             [e.target.name]: e.target.value,
         });
     }
-
-    // function randNum() {
-    //     return Math.floor(Math.random() * 10);
-    //    }
 
     function handleSubmit(e){
         e.preventDefault();
@@ -34,7 +30,7 @@ function CardForm ({onAddPatient}) {
         body: JSON.stringify({
         name: formData.name || "user",
         status: formData.status,
-        // image: formData.image || "https://placebear.com/401/401",
+        isHidden: formData.isHidden,
         image: `https://placebear.com/${Math.floor(Math.random() * 100)+400}/${Math.floor(Math.random() * 100)+400}`,
             }),
         })
