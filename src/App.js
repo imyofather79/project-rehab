@@ -8,6 +8,7 @@ import Room from "./Components/Room";
 
 function App() {
   const [patients, setPatients] = useState([]);
+  
 
   useEffect(() => {
     fetch("http://localhost:4000/patients")
@@ -20,17 +21,17 @@ function App() {
   }
 
   function handleRemovePatient(removePatient){
-    const updatedPatients = patients.filter(
-      (patient) => patient.id !== removePatient.id);
+    const updatedPatients = patients.filter((patient) => 
+      patient !== removePatient);
       setPatients(updatedPatients);
   }
 
 
   function handleUpdatedPatient(updatedPatient){
     const updatedPatients = patients.map((patient) => 
-    patient.id === updatedPatient.id ? updatedPatient : patient
-    );
-    setPatients(updatedPatients);
+      patient.id === updatedPatient.id ? updatedPatient : patient
+        );
+      setPatients(updatedPatients);
   }
 
 
@@ -40,14 +41,13 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/">
-            <Home onAddPatient={handleAddPatient}/>  
+              <Home onAddPatient={handleAddPatient}/>  
           </Route>
           <Route exact path="/room">
-            <Room 
-                  patients={patients}
-                  onDeletePatient={handleRemovePatient}
-                  onUpdatePatient={handleUpdatedPatient}     
-            />  
+              <Room 
+                    patients={patients}
+                    onUpdatePatient={handleUpdatedPatient}     
+              />  
           </Route>
           <Route exact path="/backdoor">
               <Backdoor 

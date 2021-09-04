@@ -3,15 +3,15 @@ import ReactTooltip from 'react-tooltip';
 
 function Dealer({patients, onDeletePatient, onUpdatePatient}) {
     const {id, name, status, image } = patients;
-    
+
     function handleDeleteClick(){
         fetch(`http://localhost:4000/patients/${id}`, {
             method: "DELETE",
         })
             .then((r) => r.json())
-            .then((submit) =>{ 
-                onDeletePatient(submit);
-            })
+            .then(() =>(
+             onDeletePatient(patients)
+            ));
     }
 
     function handleUpdateClick(){
@@ -42,7 +42,7 @@ function Dealer({patients, onDeletePatient, onUpdatePatient}) {
                 break
             default:
                 userStatus = '🍻&💉&🐾'
-        }
+        };
     
     return (
         <div className="page-container">
@@ -66,4 +66,5 @@ function Dealer({patients, onDeletePatient, onUpdatePatient}) {
         </div>
     )
 }
+
 export default Dealer;

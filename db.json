@@ -15,32 +15,18 @@
       "isHidden": false
     },
     {
-      "name": "George",
-      "status": "Alcohol",
-      "image": "https://placebear.com/460/413",
-      "id": 3,
-      "isHidden": false
-    },
-    {
-      "name": "Paula",
-      "status": "Drug",
-      "isHidden": false,
-      "image": "https://placebear.com/439/492",
-      "id": 4
-    },
-    {
-      "name": "Bad Bear",
-      "status": "All",
-      "isHidden": false,
-      "image": "https://placebear.com/496/461",
-      "id": 5
-    },
-    {
       "name": "Father Bear",
       "status": "All",
       "isHidden": false,
       "image": "https://placebear.com/436/492",
       "id": 6
+    },
+    {
+      "name": "Mama Bear",
+      "status": "Behavioral",
+      "isHidden": false,
+      "image": "https://placebear.com/412/415",
+      "id": 7
     }
   ]
 }

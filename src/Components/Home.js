@@ -6,8 +6,17 @@ import CardForm from './CardForm';
     return (
         <div id="home">
             <h1>Welcome to the Rehab Center</h1>
+            <h2>Help is available</h2>
+            <p>Speak with someone today</p>
+            <br />
+            <span>
+                SAMHSA National Helpline
+                Confidential free help, from public health agencies, to find substance use treatment and information. Learn more
+            </span>
+            <h3>1-800-662-4357</h3>
+
             <br/>
-            <span>Please check in below:</span>
+            <span>Please put your information below:</span>
             <CardForm onAddPatient={onAddPatient} />
         </div>
     )
