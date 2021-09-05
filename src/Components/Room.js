@@ -13,7 +13,7 @@ import PatientCard from './PatientCard';
     ));
 
     return (
-        <div className="room">
+        <div id="room">
             {patientCards}
         </div>
     )

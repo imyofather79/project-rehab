@@ -14,7 +14,9 @@ import Dealer from './Dealer';
     ));
 
     return (
-        <div className="backdoor">
+        <div id="backdoor">
+            <img src={"https://image.shutterstock.com/image-photo/drug-dealer-260nw-72045445.jpg"} height={400}/>
+            <p>I have everything, what do you need?</p>
             {backdoorDealer}
         </div>
     )

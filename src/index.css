@@ -1,0 +1,111 @@
+body {
+    background-color: #282c34;
+    color: white;
+    padding: 40px;
+    font-family: 'georgia';
+    text-align: center;
+    
+  }
+
+h3 {
+  font-size: 32px;
+  font-family: 'georgia';
+  font-weight: bold;
+  text-align: center;
+}
+
+.button{
+  top: 100px;
+  background-color: white;
+  border-radius: 50px;
+  height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  display: inline-block;
+  justify-self: auto;
+  padding: 12px 27px;
+  margin: 0 12px 12px;
+  position: relative;
+  border: 2px solid black;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
+
+.button:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+
+#navbar {
+  background-position: center center;
+  background-size: auto;
+  height: 100%;
+  padding: 120px;
+  background-repeat: no-repeat;
+  background-image: url("https://www.recoveryranch.com/wp-content/uploads/2020/03/Rehab-Center-Sign.jpg");
+
+}
+
+#room {
+  background-position: top center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/1-group-therapy-chairs-allan-swart.jpg");
+}
+
+#backdoor {
+  background-position: top center;
+  background-attachment: fixed;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-image: url("https://i.pinimg.com/originals/f1/b4/17/f1b417fb7643e7c1dd0f77fef6668c6c.jpg");
+}
+
+.backdoor-dealer {
+  color: white,
+}
+
+.patientcard {
+  font-size: 32px;
+  font-family: 'georgia';
+  font-weight: bold;
+  text-align: center;
+}
+
+.patientcard-img {
+  width: 350px;
+  height: 350px;
+}
+
+.input-button{
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px;
+  text-decoration: none;
+  margin: 10px 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  box-shadow:0 0 15px 4px rgb(255, 0, 0);
+}
+
+.card {
+  padding: 10px;
+  margin:10px 10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgb(0, 255, 21);
+  width:20%;
+  font-family:inherit;
+  font-size: inherit;
+  border-radius:50px;
+  text-align: center;
+}
+

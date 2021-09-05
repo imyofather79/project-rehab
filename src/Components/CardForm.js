@@ -31,7 +31,7 @@ function CardForm ({onAddPatient}) {
         name: formData.name || "user",
         status: formData.status,
         isHidden: formData.isHidden,
-        image: `https://placebear.com/${Math.floor(Math.random() * 100)+400}/${Math.floor(Math.random() * 100)+400}`,
+        image: `https://placebear.com/${Math.floor(Math.random() * 100)^2+400}/${Math.floor(Math.random() * 100)^2+400}`,
             }),
         })
         .then((r) => r.json())
@@ -43,7 +43,7 @@ function CardForm ({onAddPatient}) {
 
 
 return (
-        <section id="card">
+        <section>
             
             <h3>Your Info</h3>
                 <form onSubmit={handleSubmit}>
@@ -53,18 +53,20 @@ return (
                         value={formData.name}
                         name="name"
                         placeholder="your name here..."
+                        className="card"
                     />
                     <select 
                         name="status"
                         value={formData.status}
                         onChange={handleChange}
+                        className="card"
                     >
                             <option value="All">All</option>
                             <option value="Alcohol">Alcohol Addiciton</option>
                             <option value="Drug">Drugs Addiciton</option>
                             <option value="Behavioral">Behavioral Addiciton</option>
                     </select>
-                    <button type="submit">Let me in</button>
+                    <button type="submit" className="input-button">Let me in</button>
                 </form>
         </section>
     )

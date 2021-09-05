@@ -45,22 +45,24 @@ function Dealer({patients, onDeletePatient, onUpdatePatient}) {
         };
     
     return (
-        <div className="page-container">
+        <div className="backdoor-dealer">
+            
             <ReactTooltip />
                 <h2>Name: {name}</h2>
             <img
                 src={image}
                 alt={name}
+                className="patientcard-img"
             />
             <br />
                 <span data-tip={status}>Addiction: {userStatus} </span>
             
             <br />
-            <button onClick={handleUpdateClick}>
-                Go Back
+            <button className="input-button" onClick={handleUpdateClick}>
+                Take it
             </button>
-            <button onClick={handleDeleteClick}>
-                Go Home
+            <button className="input-button" onClick={handleDeleteClick}>
+                Leave it
             </button>
             
         </div>

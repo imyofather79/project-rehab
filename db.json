@@ -1,13 +1,6 @@
 {
   "patients": [
     {
-      "name": "Sam",
-      "status": "Alcohol",
-      "image": "https://placebear.com/406/407",
-      "id": 1,
-      "isHidden": false
-    },
-    {
       "name": "Harry",
       "status": "Drug",
       "image": "https://placebear.com/476/450",
@@ -27,6 +20,13 @@
       "isHidden": false,
       "image": "https://placebear.com/412/415",
       "id": 7
+    },
+    {
+      "name": "Neighbor Bear",
+      "status": "Behavioral",
+      "isHidden": false,
+      "image": "https://placebear.com/443/476",
+      "id": 8
     }
   ]
 }

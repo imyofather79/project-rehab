@@ -35,17 +35,18 @@ import ReactTooltip from 'react-tooltip';
         }
     
     return (
-        <div className="page-container">
+        <div className="patientcard">
             <ReactTooltip />
                 <h2>Name: {name}</h2>
             <img
                 src={image}
                 alt={name}
+                className="patientcard-img"
             />
             <br />
                 <span data-tip={status}>Addiction: {userStatus} </span>
             <br />
-            <button onClick={handleUpdateClick}>
+            <button onClick={handleUpdateClick} className="input-button">
                 Detox?
             </button>
             
